@@ -2,7 +2,7 @@
 
 extern const char WindowName[] = "OkayuLoader";
 extern int WindowWidth = 500;
-extern int WindowHeight = 130;
+extern int WindowHeight = 150;
 extern DWORD dwFlag = ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse;
 
 
@@ -33,6 +33,10 @@ void ui(static bool& open)
         ImGui::PopStyleColor();
         ImGui::SameLine();
         ImGui::Text("osu.okayu.pw");
+
+        ImGui::PushItemWidth(480);
+        ImGui::Combo("", &osu::server, osu::servers, 8, 2);
+        ImGui::PopItemWidth();
 
         if (ImGui::Button("Play", ImVec2(480, 18))) button::play(true);
         if (ImGui::Button("Play without patcher", ImVec2(480, 18))) button::play(false);
@@ -91,8 +95,14 @@ namespace themes
         // Colors styling
         style.Colors[ImGuiCol_WindowBg] = PurpleWhiteColors::DefaultColor;
         style.Colors[ImGuiCol_TitleBgActive] = PurpleWhiteColors::AccentColor;
+        style.Colors[ImGuiCol_ScrollbarBg] = PurpleWhiteColors::FrameDefaultColor;
 
         style.Colors[ImGuiCol_FrameBg] = PurpleWhiteColors::FrameDefaultColor;
+        style.Colors[ImGuiCol_PopupBg] = PurpleWhiteColors::FrameDefaultColor;
+
+        style.Colors[ImGuiCol_Header] = PurpleWhiteColors::AccentColor;
+        style.Colors[ImGuiCol_HeaderHovered] = PurpleWhiteColors::HoveredAccentColor;
+        style.Colors[ImGuiCol_HeaderActive] = PurpleWhiteColors::ActiveAccentColor;
 
         style.Colors[ImGuiCol_Button] = PurpleWhiteColors::AccentColor;
         style.Colors[ImGuiCol_ButtonHovered] = PurpleWhiteColors::HoveredAccentColor;
@@ -104,6 +114,8 @@ namespace themes
         style.Colors[ImGuiCol_Tab] = PurpleWhiteColors::FrameAccentColor;
         style.Colors[ImGuiCol_TabHovered] = PurpleWhiteColors::HoveredAccentColor;
         style.Colors[ImGuiCol_TabActive] = PurpleWhiteColors::AccentColor;
+
+        style.Colors[ImGuiCol_FrameBgHovered] = PurpleWhiteColors::HoveredAccentColor;
     }
 }
 
@@ -126,7 +138,7 @@ namespace PurpleWhiteColors
     extern ImVec4 AccentColor = ImVec4(0.514f, 0.392f, 1.000f, 1.000f);
 
     extern ImVec4 FrameAccentColor = ImVec4(0.514f, 0.392f, 1.000f, 0.500f);
-    extern ImVec4 FrameDefaultColor = ImVec4(0.027f, 0.027f, 0.027f, 1.000f);
+    extern ImVec4 FrameDefaultColor = ImVec4(0.900f, 0.900f, 0.900f, 1.000f);
     extern ImVec4 HoveredAccentColor = ImVec4(0.643f, 0.553f, 1.000f, 1.000f);
     extern ImVec4 ActiveAccentColor = ImVec4(0.414f, 0.269f, 0.994f, 1.000f);
 
