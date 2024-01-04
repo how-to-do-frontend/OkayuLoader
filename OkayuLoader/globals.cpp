@@ -11,7 +11,8 @@ namespace osu {
 		"ez-pp farm",
 		"realistik",
 		"halcyon",
-		"heia"
+		"heia",
+		"ascension",
 	};
 	extern int server = 0;
 }
