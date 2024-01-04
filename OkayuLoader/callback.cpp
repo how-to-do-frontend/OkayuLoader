@@ -29,5 +29,6 @@ namespace button
 		{
 			system("start %Appdata%\\..\\Local\\osu!\\Patcher\\osu!.patcher.exe");
 		}
+		exit(1);
 	}
 }
