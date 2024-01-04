@@ -22,6 +22,8 @@ namespace button
 			system("start %Appdata%\\..\\Local\\osu!\\osu!.exe -devserver halcyon.pw");
 		case 7:
 			system("start %Appdata%\\..\\Local\\osu!\\osu!.exe -devserver heia.kim");
+		case 8:
+			system("start %Appdata%\\..\\Local\\osu!\\osu!.exe -devserver ascension.wtf");
 		default:
 			break;
 		}
